@@ -9,10 +9,10 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 import logging
 
-# Configure logging
+
 logging.basicConfig(level=logging.INFO)
 
-# Database setup
+##### Database setup
 DATABASE_URL = "sqlite:///./fitness.db"
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -70,7 +70,7 @@ class BookingOut(BaseModel):
     class Config:
         from_attributes = True
 
-# Dependency to get DB session
+# Dependency DB
 def get_db():
     db = SessionLocal()
     try:
@@ -78,7 +78,7 @@ def get_db():
     finally:
         db.close()
 
-# Timezone utility
+
 def convert_timezone(dt: datetime, tz: str) -> datetime:
     try:
         return dt.astimezone(ZoneInfo(tz))
