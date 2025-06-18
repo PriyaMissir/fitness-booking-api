@@ -13,7 +13,7 @@ A Simple Booking Api built with FastApi and SQLAlchemy that allows users to view
 #### SET Up Instructions
 
 
-## 1. Clone the Repository
+### 1. Clone the Repository
 git clone https://github.com/your-username/fitness-booking-api.git
 cd fitness-booking-api
 
